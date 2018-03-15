@@ -8,7 +8,7 @@ from lxml import etree
 from snownlp import SnowNLP
 
 class Weibo:
-    cookie = {"Cookie": "_T_WM=785b304358e8d7ffc810967091d7de37; SUB=_2A253omy5DeRhGeBO7FUU-S_Iyz2IHXVVbXTxrDV6PUJbkdAKLRfykW1NRa4trwfMwOJMjQQPGJkBL5EzQRPEjJ29; SUHB=0pHx0htKsbxOaf; SCF=Ao4ziTsjeUH6yWFsFJ2bkIl9Ud7Ln6bfwh9zoatMUPGnrPCcxD1lZyl_VOwRVIrCZ0_P4WHrkYXKKicW8yHLxdc.; M_WEIBOCN_PARAMS=uicode%3D20000174%26featurecode%3D20000320%26fid%3Dhotword; SSOLoginState=1520835817"}
+    cookie = {"Cookie": ""}
 
     def __init__(self, user_id, filter = 1):
         self.user_id = user_id
@@ -348,7 +348,7 @@ class Weibo:
         print("======================================================================================")
 
 def main():
-    user_id = 2870450862 #刘昊然 #周玉祥：5082584680
+    user_id = 2870450862 #刘昊然
     filter = 1
     wb = Weibo(user_id, filter)
     wb.start()
