@@ -1,0 +1,753 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link href="/opencourse/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="/opencourse/static/css/font-awesome.min.css"/>
+<link href="/opencourse/static/css/style.css" rel="stylesheet"/>
+<!--[if lt IE 9]>
+<script src="/opencourse/static/js/html5shiv.min.js"></script>
+<script src="/opencourse/static/js/respond.min.js"></script>
+<![endif]-->
+<script src="/opencourse/static/js/jquery-1.11.3.min.js"></script>
+<script src="/opencourse/static/js/jquery.page.js"></script>
+<script src="/opencourse/static/js/jquery.SuperSlide.2.1.1.js"></script>
+
+    <link href="/opencourse/static/css/custom.css" rel="stylesheet"/>
+    <script src="/opencourse/static/js/bootstrap.min.js"></script>
+    <script src="/opencourse/static/js/share.js"></script>
+    <title>课程中心 - 课程 - 操作系统</title>
+</head>
+<body class="sonpage">
+
+
+
+
+<div class="container topbar">
+    <div class="logo l"> </div>
+    <div class="search r">
+        <div class="select">
+            
+                
+                
+                
+                    <span id="searchType" class="selected" data-value="course">课程</span>
+                
+            
+            <i class="fa fa-sort-desc"></i>
+            <ul>
+                <li title="课程名称"><a data-value="course">课程</a></li>
+                <li title="课程编号"><a data-value="code">编号</a></li>
+                <li title="老师名称"><a data-value="teacher">老师</a></li>
+            </ul>
+        </div>
+        <input type="text" class="input-text" id="keyword" value=""/>
+        <button type="button" class="btn-search" onclick="searchCourse()">搜索</button>
+        
+    </div>
+</div>
+
+<div class="menu clearfix">
+    <div class="container">
+        <div class="all-col l">
+            <div class="title">
+                <i class="fa fa-bars"></i>
+                全部课程
+            </div>
+            <div class="all-col-ul">
+                <div class="col-li">
+                    <div class="col-li-title">
+                        学院列表
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="col-li-ul clearfix">
+                        <a>工科数学分析</a>
+                        <a>基础物理学</a>
+                        <a>弹性力学</a>
+                        <a>实验流体力学</a>
+                    </div>
+                    <div class="col-li-more">
+                        <dl class="clearfix">
+                            <dt>学院列表</dt>
+                            <dd>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/01">材料科学与工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/02">电子信息工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/03">自动化科学与电气工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/04">能源与动力工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/05">航空科学与工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/06">计算机学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/07">机械工程及自动化学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/08">经济管理学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/09">数学与系统科学学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/10">生物与医学工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/11">人文社会科学学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/12">外国语学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/13">交通科学与工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/14">可靠性与系统工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/15">宇航学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/17">仪器科学与光电工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/18">土木工程系</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/19">物理科学与核能工程学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/20">法学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/21">软件学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/26">新媒体艺术与设计学院</a>
+                                <a style="width: 180px;" target="_blank" href="/opencourse/org/show/27">化学与环境学院</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-li">
+                    <div class="col-li-title">
+                        热门课程
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="col-li-ul clearfix">
+                        <a>博弈与社会</a>
+                        <a>中国经典乐记</a>
+                        <a>诗歌与中国文化</a>
+                        <a>西方古典研读</a>
+                    </div>
+                    <div class="col-li-more">
+                        <dl class="clearfix">
+                            <dt>热门课程</dt>
+                            <dd>
+                                <a>中国经典</a>
+                                <a>多元微积分</a>
+                                <a>弹性力学</a>
+                                <a>大学化学</a>
+                                <a>概率统计</a>
+                                <a>基础物理学</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-li">
+                    <div class="col-li-title">
+                        最新公告
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="col-li-ul clearfix">
+                        <a>课程中心升级上线了</a><br/>
+                        <a>开学了</a>
+                    </div>
+                    <div class="col-li-more list-new" >
+                        <ul id="list_zxgg">
+                            
+                                
+                                    
+                                    
+                                
+                                
+                                    
+                                
+                                
+                            
+                            
+                                
+                                    
+                                    
+                                
+                                
+                                    
+                                    
+                                
+                                
+                            
+                            
+                                
+                                    
+                                    
+                                
+                                
+                                    
+                                
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-li">
+                    <div class="col-li-title">
+                        使用指南
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="col-li-ul clearfix">
+                        <a>新学期如何更新名单</a>
+                        <a>课程中心培训通知</a>
+                    </div>
+                    <div class="col-li-more list-new">
+                        <ul id="list_syzn"> </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="menu-list l">
+            <li><a mid="1" href="/opencourse/">首页</a></li>
+            <li><a mid="2" href="/opencourse/org/list">教学组织</a></li>
+            <li><a mid="3" href="/opencourse/news/list">新闻公告</a></li>
+            <li><a mid="tag_lyz_bk" href="/opencourse/course/list?code=tag_lyz_bk">本科课程</a></li>
+            <li><a mid="tag_lyz_yjs" href="/opencourse/course/list?code=tag_lyz_yjs">研究生课程</a></li>
+            <li><a mid="tag_lyz_video" href="/opencourse/course/list?code=tag_lyz_video">视频课程</a></li>
+            <li><a mid="tag_lyz_mooc" href="/opencourse/course/list?code=tag_lyz_mooc">MOOC课程</a></li>
+        </ul>
+        <div id="loginBar1" class="links r" style="display: none;">
+            <a href="https://course.e.buaa.edu.cn/portal/login">登录</a>
+            <span>|</span>
+            <a href="/opencourse/login/guest">游客</a>
+        </div>
+        <div id="loginBar2" class="links r" style="display: none;">
+            您好，<a id="loginName"> </a>
+            <span>|</span>
+            <a href="https://course.e.buaa.edu.cn/portal" target="_blank" title="进入后台系统">后台</a>
+            <span>|</span>
+            <a href="/opencourse/logout">登出</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function checkLogin(){
+        $.ajax({
+            url: "/opencourse/check/login",
+            type: "post",
+            dataType: "json",
+            data: {},
+            success: function (response) {
+                if(response.isSuccess){
+                    $("#loginBar2").show();
+                    $("#loginName").text(response.loginName);
+                }else{
+                    $("#loginBar1").show();
+                }
+            }
+        });
+    }
+
+    function searchCourse(){
+        var searchType=$("#searchType").attr("data-value");
+        var keyword=$("#keyword").val();
+        if(keyword.length>0){
+            location.href="/opencourse/course/list?type="+searchType+"&keyword="+keyword;
+        }
+    }
+
+    function loadTopNews(element,type){
+        $.ajax({
+            url: "/opencourse/news/list/top/3",
+            type: "post",
+            dataType: "json",
+            data: {type:type},
+            success: function (response) {
+                var html=[];
+                var data=response.content;
+                for(var i=0;i<data.length;i++){
+                    var obj=data[i];
+                    if(i==(data.length-1)){
+                        html.push('<li class="last-border">');
+                    }else{
+                        html.push('<li>');
+                    }
+                    html.push('<div><span class="text-14"><i');
+                    if(!obj.isTop){
+                        html.push(' style="background:#969696"');
+                    }
+                    html.push('>');
+                    if(i<9) {
+                        html.push('0');
+                    }
+                    html.push((i+1)+'</i>');
+                    var title=obj.title;
+                    if(title.length>19){
+                        title=title.substring(0,19)+'...';
+                    }
+                    html.push(title);
+                    html.push('</span><span class="r list-new-time">'+obj.updateDate);
+                    html.push('</span></div><div class="text-hide-none">');
+                    html.push('<a href="/opencourse/news/detail/'+obj.id+'" target="_blank">'+obj.discription+'</a>');
+                    html.push('</div><div class="height10"></div></li>');
+                }
+                $("#list_"+element).empty();
+                $("#list_"+element).append(html.join(""));
+            }
+        });
+    }
+
+    $(function(){
+        //搜索类别
+        $(".search .select .fa").bind("click",function(){
+            $(this).next("ul").toggle();
+        });
+        $(".search .select a").bind("click",function(){
+            $(this).parents("ul").hide();
+            $(this).parents(".select").find(".selected").html($(this).html()).attr("data-value",$(this).attr("data-value"));
+        });
+        $(".search .select ul").bind("mouseleave",function(){
+            $(this).hide();
+        });
+
+        checkLogin();
+
+        //最新公告、使用指南
+        loadTopNews('zxgg',1);
+        loadTopNews('syzn',2);
+
+        //回车提交事件
+        $("#keyword").keydown(function() {
+            //keyCode=13是回车键
+            if (event.keyCode == "13") {
+                searchCourse();
+            }
+        });
+    });
+</script>
+
+<div class="sp-course-info clearfix">
+    <div class="container clearfix">
+        <div class="course-info-box">
+            <div class="l">
+                
+                    
+                        <img src="https://course.e.buaa.edu.cn//moteLibrary/images/default-9.png"/>
+                    
+                    
+                
+                <h2>操作系统</h2>
+                <div class="taglist">
+                    <a title="本科课程">本科课程</a><a title="专业课程">专业课程</a><a title="核心专业类">核心专业类</a><a title="2016-2017学年第2学期">2016-2017学年第2学期</a>
+                </div>
+                <div class="title">
+                    课程简介：
+                </div>
+                <p>bk_B3I062140</p>
+                <div class="col-text">本科课程</div>
+            </div>
+            <div class="r">
+                <div class="r-1">
+                    <i class="fa fa-users"></i> <span>94人</span>
+                </div>
+                <div class="r-2">
+                    <a onclick="joinFavorite(document.title,window.location)">
+                        <i class="fa fa-bookmark-o"></i>
+                        <span>收藏</span>
+                    </a>
+                    <a data-toggle="popover" data-placement="bottom" data-html="true" data-content='
+                    <i class="fa fa-weibo" onclick="shareToSinaWeiBo(document.title,window.location)"></i> &nbsp;
+                    <i class="fa fa-tencent-weibo" onclick="shareToQQWeiBo(document.title,window.location)"></i> &nbsp;
+                    <i class="fa fa-qq" onclick="shareToQQ(document.title,window.location)"></i> &nbsp;
+                    <i class="fa fa-weixin" onclick="shareToWeiXin()"></i>'>
+                        <i class="fa fa-share-alt"></i>
+                        <span>分享</span>
+                    </a>
+                    <div id="ckepop" style="display: none;"><a class="jiathis_button_weixin">分享到微信</a></div>
+                    <script type="text/javascript" src="https://v3-jiathis-com.e.buaa.edu.cn/code/jia.js?uid=1" charset="utf-8"></script>
+                </div>
+                <div class="r-3">
+                    
+                        
+                            
+                                
+                                    <button type="button" onclick="goUrl('https://course.e.buaa.edu.cn/portal/site/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e')">立即学习</button>
+                                
+                                
+                            
+                        
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sp-course-introduce clearfix">
+    <div class="container clearfix">
+        <div class="l">
+            <div class="course-introduce-word clearfix">
+                <div class="hd">
+                    <ul>
+                        <li>课程介绍</li>
+                        <li>课程大纲</li>
+                        <li>课程资源</li>
+                        <li>教师信息</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <div><p>bk_B3I062140</p></div>
+                    <div>无</div>
+                    <div><table class="dataGrid"><tr><th><b>资源名称</b></th><th><b>资源大小</b></th><th><b>上传者</b></th><th><b>上传时间</b></th></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/1.%E5%BC%95%E8%AE%BA.pdf">1.引论.pdf</a></td><td>3 MB</td><td> 王雷</td><td>2014-3-4 上午10:47</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/10.%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E5%AE%9E%E4%BE%8B.pdf">10.磁盘管理实例.pdf</a></td><td>341 KB</td><td> 王雷</td><td>2014-3-4 上午10:55</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/11.%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.pdf">11.文件系统.pdf</a></td><td>1 MB</td><td> 王雷</td><td>2014-3-4 上午10:55</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/12.%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AE%9E%E4%BE%8B.pdf">12.文件系统实例.pdf</a></td><td>352 KB</td><td> 王雷</td><td>2014-3-4 上午10:55</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/13.%E5%88%86%E5%B8%83%E5%BC%8F.%E5%AE%89%E5%85%A8.pdf">13.分布式.安全.pdf</a></td><td>4 MB</td><td> 王雷</td><td>2014-3-4 上午10:55</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/2.%E5%90%AF%E5%8A%A8.pdf">2.启动.pdf</a></td><td>769 KB</td><td> 王雷</td><td>2014-3-4 上午10:47</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/3.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.pdf">3.内存管理.pdf</a></td><td>2 MB</td><td> 王雷</td><td>2014-3-4 上午10:47</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/4.1%E7%BA%BF%E7%A8%8B.pdf">4.1线程.pdf</a></td><td>816 KB</td><td> 王雷</td><td>2014-3-4 上午10:52</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/4.%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86.pdf">4.进程管理.pdf</a></td><td>1 MB</td><td> 王雷</td><td>2014-3-4 上午10:52</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/4%EF%BC%8Dmm.pdf">4－mm.pdf</a></td><td>823 KB</td><td> 王雷</td><td>2014-4-15 上午9:28</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/5.IPC.pdf">5.IPC.pdf</a></td><td>337 KB</td><td> 王雷</td><td>2014-3-4 上午10:52</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/6.%E8%B0%83%E5%BA%A6.pdf">6.调度.pdf</a></td><td>903 KB</td><td> 王雷</td><td>2014-3-4 上午10:52</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/7.%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86.pdf">7.设备管理.pdf</a></td><td>9 MB</td><td> 王雷</td><td>2014-3-4 上午10:55</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/8.%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86.pdf">8.设备管理.pdf</a></td><td>9 MB</td><td> 王雷</td><td>2014-3-4 上午10:52</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/9.%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.pdf">9.磁盘管理.pdf</a></td><td>4 MB</td><td> 王雷</td><td>2014-3-4 上午10:55</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/linker.loader.pdf">linker.loader.pdf</a></td><td>1 MB</td><td> 王雷</td><td>2014-3-20 上午9:24</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E6%80%BB%E5%A4%8D%E4%B9%A0_wty_2015.pdf">操作系统_总复习_wty_2015.pdf</a></td><td>692 KB</td><td> 沃天宇</td><td>2015-6-5 下午10:28</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E7%AC%AC%E4%B8%83%E7%AB%A0_%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86_wty_2015.pdf">操作系统_第七章_磁盘管理_wty_2015.pdf</a></td><td>2 MB</td><td> 沃天宇</td><td>2015-5-23 上午11:12</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E7%AC%AC%E4%B9%9D%E7%AB%A0_%E5%88%86%E5%B8%83%E5%BC%8FOS_wty_2015.pdf">操作系统_第九章_分布式OS_wty_2015.pdf</a></td><td>1 MB</td><td> 沃天宇</td><td>2015-6-5 下午10:28</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E7%AC%AC%E4%BA%94%E7%AB%A0_IO_wty_2015.pdf">操作系统_第五章_IO_wty_2015.pdf</a></td><td>2 MB</td><td> 沃天宇</td><td>2015-5-11 上午11:18</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E7%AC%AC%E5%85%AB%E7%AB%A0_%E5%AE%89%E5%85%A8_wty_2015.pdf">操作系统_第八章_安全_wty_2015.pdf</a></td><td>2 MB</td><td> 沃天宇</td><td>2015-6-5 下午10:28</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E7%AC%AC%E5%85%AD%E7%AB%A0_%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F_1__wty_2015.pdf">操作系统_第六章_文件系统(1)_wty_2015.pdf</a></td><td>2 MB</td><td> 沃天宇</td><td>2015-5-16 下午3:54</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%89/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_%E7%AC%AC%E5%9B%9B%E7%AB%A0_%E8%BF%9B%E7%A8%8B%E4%B8%8E%E5%B9%B6%E5%8F%91%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1_4__wty_2015.pdf">操作系统_第四章_进程与并发程序设计(4)_wty_2015.pdf</a></td><td>1 MB</td><td> 沃天宇</td><td>2015-5-11 上午11:18</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/1.%E5%BC%95%E8%AE%BA_20170302_.pdf">1.引论(20170302) .pdf</a></td><td>13 MB</td><td> 王雷</td><td>2017-3-8 下午3:25</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/2.%E5%90%AF%E5%8A%A8_20170306_.pdf">2.启动(20170306) .pdf</a></td><td>3 MB</td><td> 王雷</td><td>2017-3-8 下午3:25</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/3.%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86_20170322_.pdf">3.内存管理(20170322).pdf</a></td><td>13 MB</td><td> 王雷</td><td>2017-3-27 下午1:53</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/4.1%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B_20170328_.pdf">4.1进程与线程(20170328).pdf</a></td><td>5 MB</td><td> 王雷</td><td>2017-3-27 下午1:53</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/4.2%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5_20170411_.pdf">4.2进程同步(20170411).pdf</a></td><td>5 MB</td><td> 王雷</td><td>2017-4-11 上午8:16</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/4.3.%E8%B0%83%E5%BA%A6_20170411_.pdf">4.3.调度(20170411).pdf</a></td><td>4 MB</td><td> 王雷</td><td>2017-4-21 上午11:56</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/4.4.%E6%AD%BB%E9%94%81_20170419_.pdf">4.4.死锁(20170419).pdf</a></td><td>2 MB</td><td> 王雷</td><td>2017-4-21 上午11:56</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/5.1.IO%E7%AE%A1%E7%90%86_20170502_.pdf">5.1.IO管理(20170502).pdf</a></td><td>14 MB</td><td> 王雷</td><td>2017-5-2 下午5:02</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/5.2%20%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86_20170503_.pdf">5.2 磁盘管理(20170503).pdf</a></td><td>7 MB</td><td> 王雷</td><td>2017-5-4 下午3:05</td></tr><tr class="alter"><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/7.%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F_20170508_.pdf">7.文件系统(20170508).pdf</a></td><td>7 MB</td><td> 王雷</td><td>2017-5-11 下午3:07</td></tr><tr><td><a href="https://course.e.buaa.edu.cn/access/content/group/fd3602fb-bcb2-46d7-b9d6-a2b3eba0a26e/%E8%AE%B2%E4%B9%892017/%E5%A4%8D%E4%B9%A0.pdf">复习.pdf</a></td><td>2 MB</td><td> 王雷</td><td>2017-5-18 上午8:22</td></tr></table></div>
+                    <div>无</div>
+                </div>
+            </div>
+            <div class="teacher-course clearfix">
+                <div class="title"><i class="fa fa-file-text"></i> 教师课程</div>
+                <ul id="teacherCourses" class="clearfix"> </ul>
+            </div>
+        </div>
+        <div class="r">
+            <div class="course-teach">
+                <div class="title">
+                    <i class="fa fa-graduation-cap"></i> 授课老师
+                </div>
+                <ul>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><h2 title="王雷">王雷</h2><span>北京航空航天大学</span></li>
+                    
+                </ul>
+            </div>
+            <div class="stuent-list clearfix">
+                <div class="title">
+                    <i class="fa fa-user"></i> 课程成员
+                    
+                </div>
+                <ul class="clearfix" >
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 杨子航"> 杨子航</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 马冰奇"> 马冰奇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 朱贞熹"> 朱贞熹</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 刘瑞杰"> 刘瑞杰</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 郑健"> 郑健</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王岩"> 王岩</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 俞梦菲"> 俞梦菲</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 司靖辉"> 司靖辉</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 马静天"> 马静天</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 冯元"> 冯元</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王淼"> 王淼</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张钰"> 张钰</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 陈嘉林"> 陈嘉林</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 夏欣怡"> 夏欣怡</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 石奇川"> 石奇川</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 辛治旻"> 辛治旻</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 杨思超"> 杨思超</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 黄嘉伟"> 黄嘉伟</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王子轩"> 王子轩</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 彭骞"> 彭骞</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 刘元琦"> 刘元琦</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李一睿"> 李一睿</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 白靖宇"> 白靖宇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李煦通"> 李煦通</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 贺牧天"> 贺牧天</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张邵良"> 张邵良</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 冉屹峰"> 冉屹峰</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 管政"> 管政</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李娇阳"> 李娇阳</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 林宁宁"> 林宁宁</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 胡杨"> 胡杨</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 赵振宁"> 赵振宁</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 周昶旭"> 周昶旭</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王子铭"> 王子铭</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 彭煦潭"> 彭煦潭</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张利泽"> 张利泽</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 罗劭衡"> 罗劭衡</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 徐凯兵"> 徐凯兵</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 冉鹏飞"> 冉鹏飞</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王铭泽"> 王铭泽</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 狄英"> 狄英</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王晴"> 王晴</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 吕向"> 吕向</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 万恒婧"> 万恒婧</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 金代圣"> 金代圣</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 岳育新"> 岳育新</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张伟晨"> 张伟晨</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王凌霄"> 王凌霄</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王雷"> 王雷</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 郭致远"> 郭致远</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 石洋"> 石洋</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张晨"> 张晨</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 郝志鹏"> 郝志鹏</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王祁滨"> 王祁滨</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 赵宇奇"> 赵宇奇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王辰昱"> 王辰昱</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李何贝子"> 李何贝子</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李泊雨"> 李泊雨</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 杨旺旺"> 杨旺旺</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张航"> 张航</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 刘宇"> 刘宇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王梓嘉"> 王梓嘉</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 赵晓宇"> 赵晓宇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王帅"> 王帅</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张冉"> 张冉</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 刘凯凡"> 刘凯凡</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张文斌"> 张文斌</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 薛理鑫"> 薛理鑫</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王菲"> 王菲</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李新瑞"> 李新瑞</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 于洋"> 于洋</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 孔子乔"> 孔子乔</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王新晨"> 王新晨</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张惠乔"> 张惠乔</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李德康"> 李德康</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张雄飞"> 张雄飞</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王祺"> 王祺</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 董善为"> 董善为</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 王帅"> 王帅</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张介宇"> 张介宇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 赵奕"> 赵奕</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 童守玉"> 童守玉</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 刘畅"> 刘畅</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 索一奇"> 索一奇</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 尹博弘"> 尹博弘</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 齐天翼"> 齐天翼</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 郝晓宁"> 郝晓宁</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 刘蕊"> 刘蕊</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 李博涵"> 李博涵</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 秦昌平"> 秦昌平</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 叶紫欣"> 叶紫欣</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 张嘉"> 张嘉</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 孙舟涛"> 孙舟涛</p></li>
+                    
+                        <li><img src="/opencourse/static/images/photo-1.png" /><p title=" 胡卓仑"> 胡卓仑</p></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="footer">
+    <div class="foot-nav">
+        <div class="container">
+            <ul>
+                <li class="title"><a>北航概况</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/bhgk/index.htm#1" target="_blank">北航概况</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/bhgk/bhjgysz/index.htm" target="_blank">组织机构</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/bhgk/index.htm#5" target="_blank">校友会/</a><a href="http://bhuef.buaa.edu.cn">教育基金会</a></li>
+            </ul>
+            <ul>
+                <li class="title"><a>入读北航</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/rdbh/index.htm#1" target="_blank">本科生</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/rdbh/index.htm#1" target="_blank">研究生</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/rdbh/index.htm#3" target="_blank">留学生</a></li>
+            </ul>
+            <ul>
+                <li class="title"><a>学院与课程</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/xyykc/index.htm#1" target="_blank">北航院系介绍</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/xyykc/index.htm#2" target="_blank">本科生教育</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/xyykc/index.htm#3" target="_blank">研究生教育</a></li>
+            </ul>
+            <ul>
+                <li class="title"><a>科学研究</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/kxyj/index.htm#2" target="_blank">科研学者</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/kxyj/index.htm#3" target="_blank">研究所实验室与研究中心</a></li>
+                <li><a href="http://iri.e.buaa.edu.cn" target="_blank">国际交叉科学研究院</a></li>
+            </ul>
+            <ul>
+                <li class="title"><a>全球合作</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/gjjl/index.htm#1" target="_blank">国际活动与研讨会</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/gjjl/index.htm#2" target="_blank">国际学者实验室</a></li>
+            </ul>
+            <ul>
+                <li class="title"><a>社会责任</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/shzr/index.htm#1" target="_blank">志愿服务</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/shzr/index.htm#2" target="_blank">支教团</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/shzr/index.htm#3" target="_blank">蓝天志愿者协会</a></li>
+            </ul>
+            <ul>
+                <li class="title"><a>北航校园</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/bhxy/index.htm#1" target="_blank">校园掠影</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/bhxy/index.htm#4" target="_blank">四馆一厅</a></li>
+                <li><a href="https://www.e.buaa.edu.cn/bhxy/index.htm#6" target="_blank">北航交通与参观</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="copyright">
+        <p class="l">版权所有 © 2016 北京航空航天大学 京ICP备05004617-3 文保网安备案号1101080018 地址：北京市海淀区学院路37号 邮编：100191 电话：82317114
+            <img src="/opencourse/static/images/image-11.png"/>
+        </p>
+        <p class="r">
+            <a href="https://www.e.buaa.edu.cn/yqlj/index.htm" target="_blank">友情链接</a>
+            <a href="http://zbcg.buaa.edu.cn/" target="_blank">招标公告</a>
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var curCourseId='12419'|0;
+
+    function loadTeacherCourses(){
+        $.ajax({
+            url: "/opencourse/course/list/by/teacher",
+            type: "post",
+            dataType: "json",
+            data: {eid:"06728"},
+            success: function (response) {
+                var html=[];
+                var data=response.content;
+                for(var i=0;i<data.length;i++){
+                    var obj=data[i];
+                    var url="location.href='/opencourse/course/detail/"+obj.id+"'";
+                    if(obj.id==curCourseId){
+                        url="void(0)";
+                    }
+                    html.push('<li onclick="'+url+'">');
+                    var imgSrc='https://course.e.buaa.edu.cn/'+obj.picPath;
+                    if(!obj.picPath){
+                        //随机课程封面图片
+                        //var index=parseInt(Math.random()*4+4,10);
+                        //imgSrc='/opencourse/static/images/image-0'+index+'.png';
+                        imgSrc='https://course.e.buaa.edu.cn/moteLibrary/images/default.png';
+                    }
+                    html.push('<img src="'+imgSrc+'"/>');
+                    var title=obj.title;
+                    if(title.length>11){
+                        title=title.substring(0,11)+'...';
+                    }
+                    html.push('<h2 title="'+obj.title+'">'+title+'</h2>');
+                    var academicSession='&nbsp;';
+                    if(obj.academicSession){
+                        academicSession=obj.academicSession;
+                    }
+                    html.push('<p>'+academicSession+'</p></li>');
+                }
+                $("#teacherCourses").empty();
+                $("#teacherCourses").append(html.join(""));
+
+                //课程动画
+                $(".teacher-course li").bind("mousemove",function(){
+                    $(this).addClass("hover");
+                }).bind("mouseleave",function(){
+                    $(this).removeClass("hover");
+                });
+            }
+        });
+    }
+
+    function goUrl(link){
+        if(link==''){
+            alert("尚未设置访问链接！");
+        }else {
+            window.open(link, "_blank");
+        }
+    }
+
+    $(function(){
+        //分类展开
+        $(".menu .all-col-ul .col-li").bind("mouseenter",function(){
+            $(this).find(".col-li-more").show();
+        }).bind("mouseleave",function(){
+            $(this).find(".col-li-more").hide();
+        });
+
+        //全部分类
+        $(".all-col").bind("mouseenter",function(){
+            $(this).find(".all-col-ul").show();
+        }).bind("mouseleave",function(){
+            $(this).find(".all-col-ul").hide();
+        });
+
+        //Tab切换
+        jQuery(".course-introduce-word").slide({mainCell:".bd",trigger:"click"});
+
+        $("[data-toggle='popover']").popover();
+
+        loadTeacherCourses();
+    });
+</script>
+</body>
+</html>
